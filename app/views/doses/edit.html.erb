@@ -5,8 +5,8 @@ How much do you actually want to use?
 
 </h3>
 
-<%= form_for ([@cocktail, @dose])  do |f| %>
-  <%= f.text_field :description %>
-  <%=  f.error_message_for(:description)%>
+<%= simple_form ([@cocktail, @dose])  do |f| %>
+  <%= f.input :description, label: none, error: 'Username is mandatory, please specify one' %>
+  <%= f.error_message_for(:description)%>
   <%= f.submit class:"btn btn-primary"%>
 <% end %>
