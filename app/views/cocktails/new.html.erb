@@ -3,9 +3,13 @@
 <%= form_for @cocktail do |f| %>
   <%= f.label :cocktail_name %>
   <%= f.text_field :name %>
-  <%= f.collection_select :ingredients, @ingredients, :id, :name %>
-  <%= f.fields_for :doses, @cocktail.doses.build do |doses| %>
-    <%= doses.text_field :description %>
-    <% end %>
   <%= f.submit %>
 <% end %>
+
+<%= link_to "Never mind, just go back to all the cocktails", cocktails_path %>
+
+
+  <%#= f.collection_select :ingredients, @ingredients, :id, :name %>
+  <%#= f.fields_for :doses, @cocktail.doses.build do |doses| %>
+    <%#= doses.text_field :description %>
+    <%# end %>

@@ -1,0 +1,13 @@
+
+<%= form_for ([@cocktail, @dose])  do |f| %>
+  <%= f.collection_select :ingredient_id, @ingredients, :id, :name%>
+  <%= f.label :amount %>
+  <%= f.text_field :description %>
+  <%= f.submit %>
+<% end %>
+
+
+<br/>
+<br/>
+
+<%= link_to "Never mind, just go back to the cocktail", cocktail_path(@cocktail) %>
