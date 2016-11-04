@@ -1,26 +1,41 @@
-<h2><%=@cocktail.name%><%= link_to "Delete this cocktail", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure you want to completly delete this cocktail?" } %></h2>
+<h2><%=@cocktail.name%></h2>
+
+<h4><%= link_to "Change the cocktail's name", edit_cocktail_path(@cocktail)  %>
+<%= link_to "Delete this cocktail", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure you want to completly delete this cocktail?" } %> </h4>
 
 
 <%#= link_to 'Add an ingredient to the cocktail', new_cocktail_dose_path(@cocktail) %>
 
+<br/>
+<br/>
+<br/>
+<br/>
 
-
+<h4>These are the ingredients in the cocktail:</h4>
 <ul>
 <% @cocktail.doses.each do |dose| %>
 <li><%= dose.description %>
-<%= dose.ingredient.name %><%= link_to "Delete", cocktail_dose_path(@cocktail, dose.id),
+<%= dose.ingredient.name %>
+ <%= link_to "Change the dose", edit_cocktail_dose_path(@cocktail, dose) %><%= link_to "Delete this dose", cocktail_dose_path(@cocktail, dose),
       method: :delete,
-      data: { confirm: "Are you sure?" } %></li>
+      data: { confirm: "Are you sure?" } %>
+
+      </li>
 <% end %>
 </ul>
 
 
-<h3>Would you like to add an ingredient to the cocktail?</h3>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<h4>Which ingredient would you like to add to the cocktail?</h4>
 <%= form_for ([@cocktail, @dose])  do |f| %>
   <%= f.collection_select :ingredient_id, @ingredients, :id, :name%>
   <%= f.label :amount %>
   <%= f.text_field :description %>
-  <%= f.submit %>
+  <%= f.submit class:"btn btn-primary" %>
 <% end %>
 
 

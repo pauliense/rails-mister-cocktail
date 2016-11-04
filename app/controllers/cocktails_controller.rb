@@ -26,10 +26,36 @@ class CocktailsController < ApplicationController
 
 def create
 
-   my_new_cocktail = Cocktail.create(cocktail_params)
-    redirect_to cocktail_path(my_new_cocktail)
+   @new_cocktail = Cocktail.new(cocktail_params)
+   if @new_cocktail.save
+    redirect_to cocktail_path(@new_cocktail)
+  else
+    render :new
+    end
 
 end
+
+
+
+def edit
+
+end
+
+def update
+
+
+  @cocktail.update(cocktail_params)
+   if @cocktail.save
+      redirect_to cocktail_path(@cocktail)
+    else
+      # show them the form again with all their data & an error message
+      render :new
+
+    end
+
+
+end
+
 
 
 def destroy
