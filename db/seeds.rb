@@ -20,7 +20,7 @@ Ingredient.create!(name: ingredient)
 end
 
 
-seed_cocktail = ["whisky sour", "gin tonic", "wodka lime", "green dragon"]
+seed_cocktail = ["wodka lime", "gin tonic"]
 
 
 seed_cocktail.each do |cocktail|
