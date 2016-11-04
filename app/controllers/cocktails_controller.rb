@@ -30,7 +30,6 @@ def create
    if @new_cocktail.save
     redirect_to cocktail_path(@new_cocktail)
   else
-    @new_cocktail.errors.full_messages
     render :new
     end
 
