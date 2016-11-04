@@ -1,12 +1,10 @@
-<h2>Welcome to Misses Cocktail</h2>
 
-<%= link_to "Add a new cocktail", new_cocktail_path  %>
 <br/>
 <br/>
 
-<h3>These are all the existing cocktails</h3>
+<h2>Super sweet cocktails</h2>
 <ul>
 <% @cocktails.each do |cocktail| %>
-<li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+<li><h4><%= link_to cocktail.name, cocktail_path(cocktail) %></h4></li>
 <% end %>
 </ul>

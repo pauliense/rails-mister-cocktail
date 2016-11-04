@@ -1,4 +1,4 @@
-<h2><%=@cocktail.name%></h2>
+<h2><%= link_to @cocktail.name, cocktail_path(@cocktail)%></h2>
 
 <h3> You are now using <em><%= @dose.description %></em> of <%= @dose.ingredient.name %>.
 How much do you actually want to use?
@@ -9,6 +9,3 @@ How much do you actually want to use?
   <%= f.text_field :description %>
   <%= f.submit class:"btn btn-primary"%>
 <% end %>
-
-
-<%= link_to "Never mind, just go back to the cocktail", cocktail_path(@cocktail) %>

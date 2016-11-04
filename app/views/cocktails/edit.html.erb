@@ -1,12 +1,12 @@
 
 
-<h2><%= @cocktail.name %></h2>
+<h2>So the name is now: <em><%= link_to @cocktail.name, cocktail_path(@cocktail) %></em></h2>
+
+<h3>What is your brilliant new choice?</h3>
 
 <%= form_for (@cocktail)  do |f| %>
-  <%= f.label :new_name %>
   <%= f.text_field :name%>
   <%= f.submit class:"btn btn-default"%>
 <% end %>
 
 
-<%= link_to "Never mind, just go back to the cocktail", cocktail_path(@cocktail) %>

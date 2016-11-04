@@ -11,12 +11,14 @@
 <br/>
 <br/>
 
-<h4>These are the ingredients in the cocktail:</h4>
+<h3>Ingredients:</h3>
 <ul>
 <% @cocktail.doses.each do |dose| %>
-<li><%= dose.description %>
-<%= dose.ingredient.name %>
- <%= link_to "Change the dose", edit_cocktail_dose_path(@cocktail, dose) %><%= link_to "Delete this dose", cocktail_dose_path(@cocktail, dose),
+<li><h4><%= dose.description %> of
+<%= dose.ingredient.name %></h4>
+ <%= link_to "Change the dose", edit_cocktail_dose_path(@cocktail, dose) %>
+ <br/>
+ <%= link_to "Delete this dose", cocktail_dose_path(@cocktail, dose),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
 
@@ -39,4 +41,3 @@
 <% end %>
 
 
-<%= link_to "Go back", root_path %>
