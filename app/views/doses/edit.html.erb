@@ -7,5 +7,6 @@ How much do you actually want to use?
 
 <%= form_for ([@cocktail, @dose])  do |f| %>
   <%= f.text_field :description %>
+  <%=  f.error_message_for(:description)%>
   <%= f.submit class:"btn btn-primary"%>
 <% end %>

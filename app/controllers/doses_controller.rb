@@ -19,6 +19,7 @@ class DosesController < ApplicationController
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
+      @dose.errors.full_messages
       # show them the form again with all their data & an error message
       render "cocktails/show"
 
